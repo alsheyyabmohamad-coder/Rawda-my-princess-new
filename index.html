@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>إلى روضة 👑❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Amiri:wght@400;700&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Cairo', sans-serif;
+    background:
+        radial-gradient(circle at 20% 20%, #32101d 0%, transparent 30%),
+        radial-gradient(circle at 80% 70%, #250d19 0%, transparent 30%),
+        #080508;
+    color: white;
+    overflow-x: hidden;
+}
+/* الخلفية */
+.background {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -2;
+}
+.glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: .25;
+    animation: moveGlow 10s infinite alternate ease-in-out;
+}
+.glow.one {
+    background: #ff315f;
+    top: 5%;
+    right: -100px;
+}
+.glow.two {
+    background: #9d3cff;
+    bottom: 5%;
+    left: -100px;
+}
+@keyframes moveGlow {
+    from {
+        transform: translate(0,0) scale(1);
+    }
+    to {
+        transform: translate(80px,50px) scale(1.3);
+    }
+}
+/* القلوب */
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 18px;
+    opacity: .5;
+    pointer-events: none;
+    animation: floatUp linear forwards;
+    z-index: 10;
+}
+@keyframes floatUp {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: .7;
+    }
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+/* البداية */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+}
+.hero-box {
+    max-width: 850px;
+    animation: appear 1.5s ease;
+}
+.small {
+    color: #ff9daf;
+    letter-spacing: 5px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.hero h1 {
+    font-size: clamp(55px, 12vw, 110px);
+    font-weight: 800;
+    background: linear-gradient(
+        90deg,
+        #fff,
+        #ff8fa3,
+        #ffd1d9,
+        #fff
+    );
+    background-size: 300%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shine 5s infinite;
+}
+@keyframes shine {
+    0% { background-position: 0%; }
+    50% { background-position: 100%; }
+    100% { background-position: 0%; }
+}
+.hero h2 {
+    font-family: 'Amiri', serif;
+    font-size: clamp(24px, 5vw, 42px);
+    color: #ffd5dc;
+}
+.hero p {
+    max-width: 600px;
+    margin: 25px auto;
+    line-height: 2;
+    color: #d9cdd0;
+}
+.start {
+    border: 1px solid #ff6682;
+    background: rgba(255,70,105,.08);
+    color: white;
+    padding: 16px 38px;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .4s;
+}
+.start:hover {
+    transform: translateY(-5px) scale(1.04);
+    background: rgba(255,70,105,.2);
+    box-shadow: 0 0 40px rgba(255,70,105,.35);
+}
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* الأقسام */
+section {
+    width: 92%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 90px 0;
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+.section-title span {
+    color: #ff718a;
+    font-size: 14px;
+    letter-spacing: 3px;
+}
+.section-title h2 {
+    font-size: 38px;
+    margin-top: 8px;
+}
+.section-title p {
+    color: #aaa;
+    margin-top: 10px;
+}
+/* الرسالة */
+.letter {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.02)
+        );
+    border: 1px solid rgba(255,130,150,.25);
+    border-radius: 30px;
+    padding: clamp(25px, 6vw, 60px);
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.4),
+        inset 0 0 40px rgba(255,80,110,.03);
+    position: relative;
+    overflow: hidden;
+}
+.letter h3 {
+    color: #ff9eae;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+.letter p {
+    color: #ddd;
+    font-family: 'Amiri', serif;
+    font-size: 23px;
+    line-height: 2.1;
+}
+/* الكروت */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+.card {
+    padding: 30px 20px;
+    text-align: center;
+    background: rgba(255,255,255,.035);
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 25px;
+    transition: .4s;
+}
+.card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255,100,130,.45);
+    background: rgba(255,80,110,.07);
+    box-shadow: 0 20px 50px rgba(255,50,90,.12);
+}
+.card .icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+.card h3 {
+    margin-bottom: 8px;
+}
+.card p {
+    color: #aaa;
+    line-height: 1.8;
+}
+/* مود روضة */
+.mood-box {
+    text-align: center;
+    padding: 55px 20px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,80,110,.08),
+            rgba(120,50,150,.08)
+        );
+    border-radius: 30px;
+    border: 1px solid rgba(255,120,140,.18);
+}
+.mood-box h2 {
+    font-size: 30px;
+}
+.mood-box p {
+    color: #aaa;
+    margin: 12px 0 25px;
+}
+.mood-btn {
+    border: none;
+    background: #ff5d78;
+    color: white;
+    padding: 14px 30px;
+    border-radius: 40px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: .3s;
+}
+.mood-btn:hover {
+    transform: scale(1.06);
+}
+.mood-result {
+    min-height: 45px;
+    margin-top: 25px;
+    color: #ffb5c1;
+    font-size: 19px;
+    font-weight: bold;
+}
+/* الوعد */
+.promise {
+    text-align: center;
+}
+.promise-box {
+    max-width: 750px;
+    margin: auto;
+    padding: 50px 25px;
+    border-radius: 30px;
+    background: rgba(255,255,255,.035);
+    border: 1px solid rgba(255,255,255,.1);
+}
+.big-heart {
+    font-size: 70px;
+    animation: heartbeat 1.6s infinite;
+}
+@keyframes heartbeat {
+    0%,100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+.promise-box p {
+    font-family: 'Amiri', serif;
+    font-size: 25px;
+    line-height: 2;
+    margin-top: 20px;
+    color: #eee;
+}
+/* النهاية */
+.final {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.final-box {
+    text-align: center;
+    max-width: 750px;
+}
+.heart-big {
+    font-size: 80px;
+    animation: heartbeat 1.4s infinite;
+}
+.final-box h2 {
+    font-size: clamp(35px, 7vw, 60px);
+    margin: 20px 0;
+}
+.final-box p {
+    color: #bbb;
+    line-height: 2;
+    font-size: 18px;
+}
+.answer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.answer {
+    padding: 14px 25px;
+    border-radius: 30px;
+    border: 1px solid #ff718a;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: .3s;
+}
+.answer:hover {
+    background: #ff718a;
+    transform: translateY(-3px);
+}
+.answer-result {
+    margin-top: 30px;
+    min-height: 50px;
+    font-size: 21px;
+    color: #ffacba;
+}
+/* الفوتر */
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    color: #777;
+}
+footer strong {
+    color: #ff8499;
+}
+/* الموبايل */
+@media (max-width: 700px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+    section {
+        padding: 60px 0;
+    }
+    .letter p {
+        font-size: 20px;
+    }
+    .hero h1 {
+        font-size: 65px;
+    }
+}
+</style>
+</head>
+<body>
+<div class="background">
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+</div>
+<!-- البداية -->
+<header class="hero">
+    <div class="hero-box">
+        <div class="small">
+            THIS PAGE IS ONLY FOR YOU
+        </div>
+        <h1>روضة</h1>
+        <h2>ممكن دقيقة من وقتك يا برنسس؟ 👑❤️</h2>
+        <p>
+            بعرف إنك متضايقة مني...
+            وعارف إن الكلام لحاله مش دايمًا بكفي،
+            عشان هيك عملتلك هاي الصفحة.
+            <br>
+            مش عشان أبرر،
+            بس عشان أحكيلك اللي بقلبي.
+        </p>
+        <button class="start" onclick="startPage()">
+            افتحيها يا برنسس ❤️
+        </button>
+    </div>
+</header>
+<!-- رسالة الاعتذار -->
+<section id="message">
+    <div class="section-title">
+        <span>FROM MY HEART</span>
+        <h2>رسالة لروضة ❤️</h2>
+        <p>اقرئيها للآخر يا برنسس 🤍</p>
+    </div>
+    <div class="letter">
+        <h3>برنسس... ❤️</h3>
+        <p>
+            إذا أنا زعلتك، فأنا آسف...
+            مش آسف بس عشان الزعل صار،
+            آسف لأني كنت السبب فيه.
+            <br><br>
+            آخر إشي بدي إياه إنك تكوني متضايقة بسببي،
+            ولا بدي كلمة مني تخلي يومك أسوأ.
+            <br><br>
+            يمكن الواحد أحيانًا يحكي أو يتصرف
+            بطريقة ما يقصد فيها الأذى،
+            بس بالنهاية المهم هو شعور الشخص اللي قدامه.
+            <br><br>
+            وشعورك عندي مهم.
+            <br><br>
+            عشان هيك...
+            سامحيني يا روضة ❤️
+            <br><br>
+            وما بدي منك تنسي زعلك بثانية،
+            بس بدي منك تعطيني فرصة أصلّح اللي صار.
+            <br><br>
+            لأنك مش شخص عادي بالنسبة إلي...
+            إنتِ برنسس، وإلك مكانة خاصة بقلبي 👑❤️
+        </p>
+    </div>
+</section>
+<!-- ليش هي مهمة -->
+<section>
+    <div class="section-title">
+        <span>WHY YOU?</span>
+        <h2>ليش روضة مميزة؟</h2>
+    </div>
+    <div class="cards">
+        <div class="card">
+            <div class="icon">🌷</div>
+            <h3>وجودك</h3>
+            <p>
+                وجودك لحاله بيفرق،
+                حتى لو ما حكينا كثير.
+            </p>
+        </div>
+        <div class="card">
+            <div class="icon">👑</div>
+            <h3>برنسس</h3>
+            <p>
+                لأنك بالنسبة إلي
+                مش أي حدا.
+            </p>
+        </div>
+        <div class="card">
+            <div class="icon">✨</div>
+            <h3>ضحكتك</h3>
+            <p>
+                آخر شيء بدي أشوفه
+                هو إنك تزعلي بسببي.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- المود -->
+<section>
+    <div class="mood-box">
+        <h2>قديش لسا زعلانة يا برنسس؟ 😂❤️</h2>
+        <p>
+            اضغطي وشوفي شو رح يصير...
+        </p>
+        <button class="mood-btn" onclick="changeMood()">
+            اضغطي هون 😭
+        </button>
+        <div class="mood-result" id="moodResult"></div>
+    </div>
+</section>
+<!-- الوعد -->
+<section class="promise">
+    <div class="section-title">
+        <span>ONE PROMISE</span>
+        <h2>وعد مني إلك</h2>
+    </div>
+    <div class="promise-box">
+        <div class="big-heart">
+            ❤️
+        </div>
+        <p>
+            بوعدك إني أحاول أكون أهدى،
+            وأفكر قبل ما أحكي،
+            وأنتبه أكثر لشعورك.
+            <br><br>
+            لأن الاعتذار الحقيقي
+            مش كلمة "آسف" وبس...
+            <br>
+            الاعتذار الحقيقي إن الواحد يحاول
+            ما يكرر نفس الشي.
+            <br><br>
+            وإنتِ بتستاهلي مني هالشي يا برنسس 👑❤️
+        </p>
+    </div>
+</section>
+<!-- النهاية -->
+<section class="final">
+    <div class="final-box">
+        <div class="heart-big">
+            ❤️
+        </div>
+        <h2>
+            وآخر سؤال يا روضة...
+        </h2>
+        <p>
+            بعد كل اللي قرأتيه،
+            شو رأيك؟
+        </p>
+        <div class="answer-buttons">
+            <button class="answer" onclick="answer(1)">
+                لسا زعلانة 😤
+            </button>
+            <button class="answer" onclick="answer(2)">
+                يمكن شوي 🥹
+            </button>
+            <button class="answer" onclick="answer(3)">
+                مسامحتك ❤️
+            </button>
+        </div>
+        <div class="answer-result" id="answerResult"></div>
+    </div>
+</section>
+<footer>
+    Made with ❤️ especially for
+    <strong>روضة</strong>
+    <br><br>
+    برنسس 👑❤️
+</footer>
+<script>
+/* فتح الصفحة */
+function startPage() {
+    document.getElementById("message")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+}
+/* القلوب المتحركة */
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    const hearts = [
+        "❤️",
+        "💗",
+        "💖",
+        "💕",
+        "🌹",
+        "✨"
+    ];
+    heart.innerHTML =
+        hearts[Math.floor(Math.random() * hearts.length)];
+    heart.style.left =
+        Math.random() * 100 + "vw";
+    heart.style.fontSize =
+        (12 + Math.random() * 20) + "px";
+    heart.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => {
+        heart.remove();
+    }, 10000);
+}
+setInterval(createHeart, 700);
+/* زر المود */
+let mood = 0;
+function changeMood() {
+    mood++;
+    const result =
+        document.getElementById("moodResult");
+    const messages = [
+        "لسا زعلانة؟ 😭 طيب استني شوي يا برنسس...",
+        "طب خلينا نخفف الزعل شوي 😂❤️",
+        "محمد رسميًا دخل مرحلة الاعتذار المكثف 😭❤️",
+        "آخر محاولة... ابتسامة صغيرة بس 🥹",
+        "خلاص يا برنسس 😭❤️ سامحيني."
+    ];
+    result.innerHTML =
+        messages[
+            Math.min(mood - 1, messages.length - 1)
+        ];
+}
+/* السؤال النهائي */
+function answer(number) {
+    const result =
+        document.getElementById("answerResult");
+    if (number === 1) {
+        result.innerHTML =
+            "طيب 😭 خذي وقتك يا روضة... بس أنا لسا مستني ابتسامتك ❤️";
+    }
+    else if (number === 2) {
+        result.innerHTML =
+            "شوي بس؟ 😭❤️ يعني لسا في أمل كبير يا برنسس.";
+    }
+    else {
+        result.innerHTML =
+            "❤️❤️❤️ الحمدلله! أهم إشي رجعت ابتسامتك يا روضة 👑";
+    }
+}
+</script>
+</body>
+</html>
