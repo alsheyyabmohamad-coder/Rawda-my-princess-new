@@ -1,1 +1,623 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>برنسس 👑❤️</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+    background:
+    radial-gradient(circle at 50% 25%,#3b155c,#14081f 55%,#050207);
+    color:white;
+}
+
+/* الخلفية */
+
+.bg{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-2;
+}
+
+.glow{
+    position:absolute;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    background:#d45cff;
+    filter:blur(120px);
+    opacity:.2;
+    animation:glowMove 8s infinite alternate;
+}
+
+.glow:nth-child(1){
+    top:-100px;
+    right:-100px;
+}
+
+.glow:nth-child(2){
+    bottom:-150px;
+    left:-100px;
+    background:#ff5ca8;
+    animation-delay:2s;
+}
+
+@keyframes glowMove{
+    from{transform:translate(0,0);}
+    to{transform:translate(80px,50px);}
+}
+
+/* القلوب الطائرة */
+
+.heart{
+    position:absolute;
+    bottom:-50px;
+    font-size:24px;
+    animation:floatUp linear forwards;
+    opacity:0;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) scale(.5);
+        opacity:0;
+    }
+    15%{
+        opacity:.9;
+    }
+    85%{
+        opacity:.8;
+    }
+    100%{
+        transform:translateY(-110vh) scale(1.3);
+        opacity:0;
+    }
+}
+
+/* الكرت */
+
+.screen{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.card{
+    width:95%;
+    max-width:650px;
+    padding:40px 25px;
+    text-align:center;
+
+    border-radius:35px;
+
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+    0 30px 100px rgba(0,0,0,.55),
+    inset 0 0 40px rgba(255,255,255,.03);
+
+    animation:cardIn 1.3s ease;
+}
+
+@keyframes cardIn{
+    from{
+        opacity:0;
+        transform:translateY(40px) scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.crown{
+    font-size:58px;
+    margin-bottom:15px;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.12);
+    }
+}
+
+h1{
+    font-size:44px;
+    margin-bottom:15px;
+}
+
+.subtitle{
+    color:#ead5ed;
+    font-size:18px;
+    line-height:1.9;
+}
+
+/* الأزرار */
+
+button{
+    border:0;
+    cursor:pointer;
+    border-radius:30px;
+    padding:15px 30px;
+    font-size:18px;
+
+    color:white;
+
+    background:
+    linear-gradient(135deg,#d86cff,#ff579f);
+
+    box-shadow:
+    0 10px 35px rgba(220,80,180,.35);
+
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.07);
+}
+
+button:active{
+    transform:scale(.95);
+}
+
+/* الصفحات */
+
+.page{
+    display:none;
+    animation:pageIn 1s ease;
+}
+
+.page.active{
+    display:block;
+}
+
+@keyframes pageIn{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* الرسالة */
+
+.message{
+    font-size:19px;
+    line-height:2.1;
+    color:#f8eafa;
+    margin:20px 0;
+}
+
+.message strong{
+    color:#ffb9d9;
+    font-size:22px;
+}
+
+/* السؤال */
+
+.options{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:25px;
+}
+
+.options button{
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);
+}
+
+/* النهاية */
+
+.final-heart{
+    font-size:75px;
+    animation:heartBeat 1.3s infinite;
+}
+
+@keyframes heartBeat{
+    50%{
+        transform:scale(1.18);
+    }
+}
+
+.final h2{
+    font-size:34px;
+    margin:15px 0;
+}
+
+.final p{
+    font-size:19px;
+    line-height:2;
+    color:#f5dff2;
+}
+
+.signature{
+    margin-top:25px;
+    font-size:23px;
+    color:#ffb4d8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg">
+    <div class="glow"></div>
+    <div class="glow"></div>
+</div>
+
+<div class="screen">
+
+<div class="card">
+
+<!-- الصفحة الأولى -->
+
+<div class="page active" id="page1">
+
+    <div class="crown">👑</div>
+
+    <h1>برنسس ❤️</h1>
+
+    <div class="subtitle">
+
+        روضة...
+        <br><br>
+
+        بعرف إنك متضايقة مني،
+        وعشان هيك عملتلك هاي الصفحة مخصوص.
+
+        <br><br>
+
+        بس أوعديني تكملي للآخر 🥺❤️
+
+    </div>
+
+    <button onclick="nextPage(1)">
+        افتحيها 💌
+    </button>
+
+</div>
+
+
+<!-- صفحة الاعتذار -->
+
+<div class="page" id="page2">
+
+    <div class="crown">🌹</div>
+
+    <h1>روضة ❤️</h1>
+
+    <div class="message">
+
+        أول إشي...
+        <br>
+
+        <strong>حقك عليّ.</strong>
+
+        <br><br>
+
+        بعرف إني زعلتك،
+        ويمكن اللي صار ضايقك أكثر
+        مما كنت متخيل.
+
+        <br><br>
+
+        وأنا مش داخل أبرر لنفسي،
+        ولا أحاول أطلع حالي صح.
+
+        <br><br>
+
+        أنا داخل أقولك بكل بساطة:
+
+        <br>
+
+        <strong>
+        آسف لأني زعلتك. 🤍
+        </strong>
+
+        <br><br>
+
+        آخر إشي بدي إياه
+        إنك تكوني متضايقة بسببي.
+
+        <br><br>
+
+        وإنتِ بتعرفي قديش إلك مكانة
+        كبيرة عندي. ❤️
+
+    </div>
+
+    <button onclick="nextPage(2)">
+        كملي... 🥺
+    </button>
+
+</div>
+
+
+<!-- صفحة خاصة -->
+
+<div class="page" id="page3">
+
+    <div class="crown">💗</div>
+
+    <h1>بس بدي أحكيلك شغلة...</h1>
+
+    <div class="message">
+
+        روضة،
+        <br><br>
+
+        أنا ممكن أخطئ،
+        وممكن أحيانًا أحكي إشي
+        بطريقة غلط.
+
+        <br><br>
+
+        بس مستحيل يكون قصدي
+        أشوفك زعلانة.
+
+        <br><br>
+
+        عشان هيك إذا في إشي
+        بقدر أعمله حتى أراضيكي...
+
+        <br><br>
+
+        <strong>
+        احكيلي. ❤️
+        </strong>
+
+        <br><br>
+
+        المهم عندي ترجع ضحكتك. 🌷
+
+    </div>
+
+    <button onclick="nextPage(3)">
+        عندي سؤال إلك 👀
+    </button>
+
+</div>
+
+
+<!-- السؤال -->
+
+<div class="page" id="page4">
+
+    <div class="crown">🥺❤️</div>
+
+    <h1>روضة...</h1>
+
+    <div class="subtitle">
+
+        إذا محمد حاول يراضيكي،
+        شو بتختاري؟
+
+    </div>
+
+    <div class="options">
+
+        <button onclick="wrongAnswer()">
+            أخليه يعتذر مرة ثانية 😂
+        </button>
+
+        <button onclick="wrongAnswer()">
+            أخليه يحاول أكثر 🥹
+        </button>
+
+        <button onclick="correctAnswer()">
+            أسامحه ❤️
+        </button>
+
+    </div>
+
+    <div id="answer"
+         style="margin-top:20px;font-size:20px;">
+    </div>
+
+</div>
+
+
+<!-- النهاية -->
+
+<div class="page final" id="page5">
+
+    <div class="final-heart">
+        ❤️
+    </div>
+
+    <h2>
+        أهم إشي يا روضة...
+    </h2>
+
+    <p>
+
+        ما بدي أخلي الزعل
+        يكون آخر شيء بينا.
+
+        <br><br>
+
+        بدي آخر شيء يكون
+        ضحكة منك. 🤍
+
+        <br><br>
+
+        فإذا كنتِ لسا زعلانة،
+        أنا رح أضل أحاول أراضيكي
+        لحد ما تبتسمي.
+
+        <br><br>
+
+        <strong>
+        سامحيني يا روضة. ❤️
+        </strong>
+
+    </p>
+
+    <div class="signature">
+        من محمد 🤍
+    </div>
+
+    <button onclick="celebrate()">
+        اضغطي هون 👀❤️
+    </button>
+
+</div>
+
+</div>
+</div>
+
+
+<script>
+
+/* تغيير الصفحات */
+
+function nextPage(current){
+
+    document.getElementById("page"+current)
+    .classList.remove("active");
+
+    document.getElementById("page"+(current+1))
+    .classList.add("active");
+}
+
+
+/* الإجابة الخطأ */
+
+function wrongAnswer(){
+
+    document.getElementById("answer").innerHTML =
+    "لااا 😂❤️ لسا في إجابة ثانية!";
+
+}
+
+
+/* الإجابة الصحيحة */
+
+function correctAnswer(){
+
+    document.getElementById("page4")
+    .classList.remove("active");
+
+    document.getElementById("page5")
+    .classList.add("active");
+
+    createHearts(25);
+
+}
+
+
+/* الاحتفال */
+
+function celebrate(){
+
+    createHearts(50);
+
+    document.querySelector(".signature").innerHTML =
+    "محمد ← ❤️ → روضة";
+
+}
+
+
+/* إنشاء القلوب */
+
+function createHearts(amount){
+
+    for(let i=0;i<amount;i++){
+
+        setTimeout(()=>{
+
+            const heart =
+            document.createElement("div");
+
+            heart.className="heart";
+
+            const emojis=[
+                "❤️",
+                "💗",
+                "💖",
+                "💞",
+                "🤍",
+                "🌹",
+                "✨"
+            ];
+
+            heart.innerHTML =
+            emojis[
+                Math.floor(
+                    Math.random()*emojis.length
+                )
+            ];
+
+            heart.style.left =
+            Math.random()*100+"vw";
+
+            heart.style.animationDuration =
+            (4+Math.random()*4)+"s";
+
+            heart.style.fontSize =
+            (18+Math.random()*20)+"px";
+
+            document.body.appendChild(heart);
+
+            setTimeout(()=>{
+                heart.remove();
+            },8000);
+
+        },i*100);
+
+    }
+
+}
+
+
+/* قلوب خفيفة بالخلفية */
+
+setInterval(()=>{
+
+    const heart =
+    document.createElement("div");
+
+    heart.className="heart";
+
+    heart.innerHTML="♡";
+
+    heart.style.left =
+    Math.random()*100+"vw";
+
+    heart.style.animationDuration =
+    (6+Math.random()*4)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },10000);
+
+},900);
+
+</script>
+
+</body>
+</html>
