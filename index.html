@@ -3,89 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>إلى برنسس روضة 👑❤️</title>
+<title>Rawda ✦</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Amiri:wght@400;700&display=swap');
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
+    font-family:Tahoma,Arial,sans-serif;
 }
 html{
     scroll-behavior:smooth;
 }
 body{
-    font-family:'Cairo',sans-serif;
-    background:
-    radial-gradient(circle at 20% 20%,#451526 0%,transparent 35%),
-    radial-gradient(circle at 80% 80%,#351247 0%,transparent 35%),
-    #090509;
+    background:#09090f;
     color:white;
     overflow-x:hidden;
 }
-/* =========================
-   الخلفية
-========================= */
-.bg{
+body::before{
+    content:"";
     position:fixed;
     inset:0;
+    background:
+    radial-gradient(circle at 20% 20%,#3b123b55,transparent 30%),
+    radial-gradient(circle at 80% 80%,#162d5555,transparent 30%);
     pointer-events:none;
-    z-index:-2;
-}
-.glow{
-    position:absolute;
-    width:350px;
-    height:350px;
-    border-radius:50%;
-    filter:blur(100px);
-    opacity:.25;
-    animation:moveGlow 10s infinite alternate;
-}
-.glow1{
-    background:#ff315f;
-    top:-100px;
-    right:-100px;
-}
-.glow2{
-    background:#8b38ff;
-    bottom:-100px;
-    left:-100px;
-}
-@keyframes moveGlow{
-    from{
-        transform:translate(0,0) scale(1);
-    }
-    to{
-        transform:translate(80px,60px) scale(1.3);
-    }
+    z-index:-1;
 }
 /* =========================
-   القلوب
+   شريط التنقل
 ========================= */
-.floating-heart{
+nav{
     position:fixed;
-    bottom:-40px;
-    pointer-events:none;
-    animation:floatHeart linear forwards;
-    z-index:50;
+    top:0;
+    width:100%;
+    padding:18px 30px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    background:#09090fcc;
+    backdrop-filter:blur(15px);
+    z-index:1000;
 }
-@keyframes floatHeart{
-    0%{
-        transform:translateY(0) rotate(0);
-        opacity:0;
-    }
-    15%{
-        opacity:.8;
-    }
-    100%{
-        transform:
-        translateY(-110vh)
-        rotate(360deg);
-        opacity:0;
-    }
+nav a{
+    color:#aaa;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
+}
+nav a:hover{
+    color:#e99bc1;
 }
 /* =========================
-   HERO
+   الصفحة الرئيسية
 ========================= */
 .hero{
     min-height:100vh;
@@ -93,338 +62,265 @@ body{
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:25px;
+    padding:30px;
 }
 .hero-content{
-    max-width:800px;
-    animation:appear 1.5s ease;
+    animation:fade 1.5s ease;
 }
-.crown{
-    font-size:60px;
-    animation:
-    crownFloat 2s infinite ease-in-out;
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
-@keyframes crownFloat{
-    0%,100%{
-        transform:translateY(0) rotate(-3deg);
-    }
-    50%{
-        transform:translateY(-10px) rotate(3deg);
-    }
+.hero .mini{
+    color:#bd79a1;
+    letter-spacing:4px;
+    margin-bottom:25px;
 }
 .hero h1{
-    font-size:
-    clamp(65px,15vw,130px);
-    margin:10px 0;
-    background:
-    linear-gradient(
-        90deg,
-        #fff,
-        #ff9aad,
-        #ffd8df,
-        #fff
-    );
-    background-size:300%;
-    -webkit-background-clip:text;
-    color:transparent;
-    animation:shine 5s infinite;
+    font-size:clamp(70px,15vw,140px);
+    font-weight:300;
 }
-@keyframes shine{
-    0%{
-        background-position:0%;
-    }
-    50%{
-        background-position:100%;
-    }
-    100%{
-        background-position:0%;
-    }
-}
-.hero h2{
-    font-family:'Amiri',serif;
-    color:#ffd5dc;
-    font-size:
-    clamp(24px,5vw,40px);
+.hero h1 span{
+    color:#df8fb7;
 }
 .hero p{
-    color:#cdbfc3;
+    color:#aaa;
+    font-size:19px;
+    margin-top:20px;
     line-height:2;
-    margin:20px auto;
-    max-width:600px;
 }
-/* =========================
-   زر
-========================= */
-.main-btn{
-    padding:16px 38px;
-    border:none;
+.start-btn{
+    display:inline-block;
+    margin-top:40px;
+    padding:15px 35px;
     border-radius:50px;
-    background:
-    linear-gradient(
-        135deg,
-        #ff5475,
-        #c83cff
-    );
+    border:1px solid #bd6792;
     color:white;
-    font-size:18px;
-    cursor:pointer;
-    box-shadow:
-    0 10px 35px
-    rgba(255,70,120,.25);
+    text-decoration:none;
     transition:.4s;
 }
-.main-btn:hover{
-    transform:
-    translateY(-5px)
-    scale(1.05);
-    box-shadow:
-    0 15px 45px
-    rgba(255,70,120,.4);
+.start-btn:hover{
+    background:#bd6792;
+    transform:scale(1.05);
 }
 /* =========================
    الأقسام
 ========================= */
 section{
-    width:92%;
+    min-height:80vh;
+    padding:100px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.container{
+    width:100%;
     max-width:1000px;
-    margin:auto;
-    padding:90px 0;
+}
+.tag{
+    color:#bd79a1;
+    font-size:13px;
+    letter-spacing:3px;
+    margin-bottom:15px;
 }
 .title{
-    text-align:center;
-    margin-bottom:40px;
+    font-size:40px;
+    font-weight:400;
+    margin-bottom:25px;
 }
-.title span{
-    color:#ff7d96;
-    letter-spacing:4px;
-    font-size:13px;
-}
-.title h2{
-    font-size:38px;
-    margin-top:8px;
-}
-.title p{
+.description{
     color:#999;
-    margin-top:8px;
+    line-height:2;
 }
 /* =========================
-   بطاقة الاعتذار
+   التاريخ
 ========================= */
-.apology{
-    padding:50px 30px;
-    border-radius:35px;
-    background:
-    linear-gradient(
-        145deg,
-        rgba(255,255,255,.07),
-        rgba(255,70,110,.025)
-    );
-    border:
-    1px solid
-    rgba(255,130,150,.25);
-    box-shadow:
-    0 30px 80px
-    rgba(0,0,0,.4);
+.date-card{
+    margin-top:35px;
+    padding:40px;
+    border-radius:25px;
+    background:#ffffff08;
+    border:1px solid #ffffff12;
     text-align:center;
-    position:relative;
-    overflow:hidden;
 }
-.apology:before{
-    content:"❤️";
-    position:absolute;
-    font-size:220px;
-    opacity:.025;
-    left:-40px;
-    bottom:-100px;
+.date{
+    font-size:45px;
+    color:#e39abd;
+    margin:15px 0;
 }
-.apology-icon{
+.date-text{
+    color:#aaa;
+}
+/* =========================
+   الأغنية
+========================= */
+.music-box{
+    margin-top:35px;
+    padding:35px;
+    border-radius:25px;
+    background:linear-gradient(135deg,#ffffff08,#ffffff03);
+    border:1px solid #ffffff12;
+    text-align:center;
+}
+.music-icon{
     font-size:55px;
     margin-bottom:20px;
 }
-.apology h3{
-    font-size:30px;
-    color:#ff9cac;
-    margin-bottom:20px;
+.music-box h3{
+    font-size:25px;
+    font-weight:400;
 }
-.apology p{
-    font-family:'Amiri',serif;
-    font-size:24px;
-    line-height:2;
-    color:#eee;
+.music-box p{
+    color:#888;
+    margin-top:10px;
 }
-/* =========================
-   الاعتذار الصغير
-========================= */
-.mini-apology{
+.music-btn{
     margin-top:25px;
-    color:#ffacba;
-    font-size:20px;
-    font-weight:bold;
-}
-/* =========================
-   لعبة نسبة الزعل
-========================= */
-.meter-box{
-    text-align:center;
-    padding:45px 25px;
-    background:
-    rgba(255,255,255,.035);
-    border:
-    1px solid
-    rgba(255,255,255,.1);
-    border-radius:30px;
-}
-.meter{
-    width:100%;
-    max-width:600px;
-    height:22px;
-    margin:30px auto;
-    background:#21151a;
+    padding:13px 30px;
     border-radius:50px;
-    overflow:hidden;
-}
-.meter-fill{
-    height:100%;
-    width:12%;
-    background:
-    linear-gradient(
-        90deg,
-        #71e08a,
-        #ffd35a,
-        #ff6380
-    );
-    border-radius:50px;
-    transition:1s;
-}
-.percent{
-    font-size:40px;
-    font-weight:bold;
-    color:#ff9caf;
-}
-.meter-btn{
-    border:none;
-    background:#ff5d78;
+    border:0;
+    background:#d17da5;
     color:white;
-    padding:14px 30px;
-    border-radius:40px;
-    font-size:17px;
     cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+.music-btn:hover{
+    transform:scale(1.06);
+    background:#bd6792;
+}
+.music-status{
+    margin-top:15px;
+    color:#bd79a1;
+    font-size:13px;
 }
 /* =========================
    الشعر
 ========================= */
+.poem-box{
+    margin-top:40px;
+    padding:45px;
+    border-right:2px solid #bd6792;
+    background:#ffffff05;
+    border-radius:15px;
+}
 .poem{
-    text-align:center;
-    padding:50px 25px;
-    border-radius:35px;
-    background:
-    linear-gradient(
-        135deg,
-        rgba(255,90,120,.08),
-        rgba(140,60,255,.06)
-    );
-    border:
-    1px solid
-    rgba(255,130,150,.2);
+    font-size:23px;
+    line-height:2.5;
 }
-.poem .rose{
-    font-size:50px;
-    margin-bottom:15px;
-}
-.poem p{
-    font-family:'Amiri',serif;
-    font-size:25px;
-    line-height:2.2;
-    color:#f6e8eb;
-}
-.signature{
-    color:#ff9eae;
-    margin-top:25px;
-    font-weight:bold;
+.poem-author{
+    margin-top:30px;
+    color:#bd79a1;
 }
 /* =========================
-   بطاقات
+   العداد
 ========================= */
-.cards{
+.counter-box{
+    margin-top:35px;
     display:grid;
-    grid-template-columns:
-    repeat(3,1fr);
-    gap:18px;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
 }
-.card{
-    padding:30px 20px;
+.counter-item{
+    background:#ffffff08;
+    border:1px solid #ffffff10;
+    border-radius:20px;
+    padding:30px 10px;
     text-align:center;
-    background:
-    rgba(255,255,255,.035);
-    border:
-    1px solid
-    rgba(255,255,255,.08);
-    border-radius:25px;
-    transition:.4s;
 }
-.card:hover{
-    transform:translateY(-8px);
-    background:
-    rgba(255,80,110,.07);
-    border-color:
-    rgba(255,100,130,.4);
+.counter-number{
+    font-size:35px;
+    color:#dd91b5;
 }
-.card-icon{
-    font-size:42px;
-    margin-bottom:15px;
-}
-.card h3{
-    margin-bottom:8px;
-}
-.card p{
-    color:#aaa;
-    line-height:1.8;
+.counter-label{
+    color:#888;
+    margin-top:8px;
 }
 /* =========================
-   زر المفاجأة
+   السؤال
 ========================= */
-.surprise{
-    text-align:center;
-    padding:60px 20px;
+.question{
+    margin-top:30px;
+    padding:30px;
+    background:#ffffff07;
+    border-radius:20px;
+    border:1px solid #ffffff10;
 }
-.surprise-btn{
-    padding:16px 35px;
-    border-radius:50px;
-    border:
-    1px solid
-    #ff718a;
+.question h3{
+    font-weight:400;
+    margin-bottom:20px;
+}
+.options{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+.option{
+    padding:12px 20px;
+    border-radius:30px;
+    border:1px solid #ffffff20;
     background:transparent;
     color:white;
-    font-size:18px;
     cursor:pointer;
-    transition:.4s;
+    transition:.3s;
 }
-.surprise-btn:hover{
-    background:#ff718a;
-    transform:scale(1.05);
+.option:hover{
+    background:#bd6792;
 }
-.surprise-text{
-    max-width:650px;
-    margin:30px auto 0;
-    min-height:70px;
-    font-family:'Amiri',serif;
-    font-size:25px;
-    color:#ffb5c1;
+.answer{
+    display:none;
+    margin-top:20px;
+    color:#df9ebe;
+}
+/* =========================
+   الرسالة المخفية
+========================= */
+.secret-btn{
+    margin-top:30px;
+    padding:15px 30px;
+    border-radius:50px;
+    background:transparent;
+    border:1px solid #bd6792;
+    color:white;
+    cursor:pointer;
+}
+.secret{
+    display:none;
+    margin-top:25px;
+    padding:30px;
+    border-radius:20px;
+    background:#bd679211;
+    color:#ccc;
     line-height:2;
 }
 /* =========================
-   النهاية
+   القلب
 ========================= */
-.final{
-    min-height:90vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.love-section{
+    min-height:60vh;
     text-align:center;
 }
-.final-heart{
+.love-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+.love-heart{
     font-size:90px;
+    cursor:pointer;
     animation:heartbeat 1.4s infinite;
+    transition:.3s;
+    user-select:none;
+}
+.love-heart:hover{
+    transform:scale(1.15);
 }
 @keyframes heartbeat{
     0%,100%{
@@ -434,449 +330,441 @@ section{
         transform:scale(1.15);
     }
 }
+.love-message{
+    opacity:0;
+    transform:translateY(20px) scale(.8);
+    margin-top:25px;
+    font-size:35px;
+    color:#df91b7;
+    font-weight:bold;
+    transition:.6s;
+    pointer-events:none;
+}
+.love-message.show{
+    opacity:1;
+    transform:translateY(0) scale(1);
+}
+/* =========================
+   النهاية
+========================= */
+.final{
+    min-height:100vh;
+    text-align:center;
+}
 .final h2{
-    font-size:
-    clamp(38px,7vw,65px);
-    margin:20px 0;
+    font-size:65px;
+    font-weight:300;
+    color:#df91b7;
 }
 .final p{
-    color:#aaa;
-    font-size:18px;
-    line-height:2;
-}
-.final-btn{
-    margin-top:30px;
-    padding:16px 40px;
-    border:none;
-    border-radius:50px;
-    background:#ff5d78;
-    color:white;
-    font-size:18px;
-    cursor:pointer;
-    transition:.3s;
-}
-.final-btn:hover{
-    transform:scale(1.07);
-}
-.final-result{
-    min-height:60px;
-    margin-top:25px;
-    color:#ffacba;
-    font-size:22px;
-    font-weight:bold;
+    margin-top:20px;
+    color:#888;
 }
 /* =========================
-   Footer
+   الموبايل
 ========================= */
-footer{
-    text-align:center;
-    padding:50px 20px;
-    border-top:
-    1px solid
-    rgba(255,255,255,.07);
-    color:#777;
-    line-height:2;
-}
-footer strong{
-    color:#ff8499;
-}
-/* =========================
-   موبايل
-========================= */
-@media(max-width:700px){
-    .cards{
-        grid-template-columns:1fr;
+@media(max-width:600px){
+    nav{
+        gap:15px;
+        padding:15px 10px;
+        overflow-x:auto;
+        justify-content:flex-start;
+        white-space:nowrap;
+    }
+    nav a{
+        font-size:11px;
+        flex-shrink:0;
     }
     section{
-        padding:65px 0;
+        padding:80px 5%;
     }
-    .poem p{
-        font-size:21px;
+    .title{
+        font-size:32px;
     }
-    .apology p{
-        font-size:20px;
+    .counter-box{
+        grid-template-columns:1fr;
+    }
+    .poem{
+        font-size:19px;
+    }
+    .date{
+        font-size:34px;
+    }
+    .love-heart{
+        font-size:75px;
+    }
+    .love-message{
+        font-size:28px;
     }
 }
 </style>
 </head>
 <body>
-<div class="bg">
-    <div class="glow glow1"></div>
-    <div class="glow glow2"></div>
-</div>
+<!-- =========================
+     شريط التنقل
+========================= -->
+<nav>
+<a href="#start">البداية</a>
+<a href="#first">أول تواصل</a>
+<a href="#music-section">أغنية</a>
+<a href="#poem">قصيدة إهداء للأميرة</a>
+<a href="#moments">التفاصيل</a>
+</nav>
 <!-- =========================
      البداية
 ========================= -->
-<header class="hero">
+<section class="hero" id="start">
 <div class="hero-content">
-    <div class="crown">
-        👑
-    </div>
-    <h1>
-        روضة
-    </h1>
-    <h2>
-        برنسس... عندي اعتراف صغير ❤️
-    </h2>
-    <p>
-        بعرف إنك زعلانة مني "نتفة"...
-        <br>
-        بس بالنسبة إلي حتى النتفة
-        ما بترضيني 😂❤️
-    </p>
-    <button
-        class="main-btn"
-        onclick="openMessage()">
-        طيب اسمعيني دقيقة 🥹
-    </button>
+<div class="mini">
+    A LITTLE PLACE FOR
 </div>
-</header>
-<!-- =========================
-     الاعتذار
-========================= -->
-<section id="apologySection">
-<div class="title">
-    <span>
-        I'M SORRY
-    </span>
-    <h2>
-        أولًا... آسف يا برنسس ❤️
-    </h2>
-    <p>
-        بدون فلسفة ولا تبريرات 😂
-    </p>
-</div>
-<div class="apology">
-    <div class="apology-icon">
-        🥹❤️
-    </div>
-    <h3>
-        روضة...
-    </h3>
-    <p>
-        آسف إذا زعلتك،
-        حتى لو زعلك مني "نتفة".
-        <br><br>
-        لأنه بصراحة،
-        أنا ما بحب أشوفك زعلانة مني
-        حتى لو لمدة خمس دقايق 😂
-        <br><br>
-        ما بدي أبرر ولا أقول
-        "بس أنا كنت أقصد..."
-        <br>
-        إذا ضايقتك،
-        فحقك عليّ.
-        <br><br>
-        سامحيني يا برنسس 👑❤️
-    </p>
-    <div class="mini-apology">
-        وتم تسجيل الاعتذار رسميًا 📜😂
-    </div>
+<h1>
+    <span>R</span>awda
+</h1>
+<p>
+    يا أميرتي الحلوة يا أحلى اشي بحياتي
+</p>
+<a href="#first" class="start-btn">
+    ابدأي ✦
+</a>
 </div>
 </section>
 <!-- =========================
-     مقياس الزعل
+     أول مرة حكينا
 ========================= -->
-<section>
-<div class="title">
-    <span>
-        IMPORTANT STATISTICS
-    </span>
-    <h2>
-        نسبة زعل برنسس 📊😂
-    </h2>
-    <p>
-        حسب أحدث الأبحاث العلمية جدًا...
-    </p>
+<section id="first">
+<div class="container">
+<div class="tag">
+    01 — FIRST CHAT
 </div>
-<div class="meter-box">
-    <div
-        class="percent"
-        id="percent">
-        12%
-    </div>
-    <div class="meter">
-        <div
-            class="meter-fill"
-            id="meterFill">
-        </div>
-    </div>
-    <button
-        class="meter-btn"
-        onclick="lowerAnger()">
-        اضغطي عشان ينزل الزعل 😂❤️
-    </button>
-    <p
-        id="angerText"
-        style="margin-top:20px;color:#aaa;">
-        الوضع تحت السيطرة 😌
-    </p>
+<h2 class="title">
+    أول مرة حكيت معك، الشات الي غير حياتي
+</h2>
+<p class="description">
+    كل قصة إلها بداية...
+    وهذه بداية الحكاية.
+</p>
+<div class="date-card">
+<div class="date">
+    31 / 12 / 2025
+</div>
+<div class="date-text">
+    أول مرة حكيت مع البرنسس
+</div>
+</div>
+</div>
+</section>
+<!-- =========================
+     الأغنية
+========================= -->
+<section id="music-section">
+<div class="container">
+<div class="tag">
+    02 — OUR SONG
+</div>
+<h2 class="title">
+    أغنية من محمد إلك 🎵
+</h2>
+<p class="description">
+    أغنية كاظم الساهر — تاريخ ميلادي
+</p>
+<div class="music-box">
+<div class="music-icon">
+    🎵
+</div>
+<h3>
+    تاريخ ميلادي — كاظم الساهر
+</h3>
+<p>
+    شغّلي الأغنية يا أميرتي
+</p>
+<button
+    class="music-btn"
+    onclick="playMusic()"
+    id="musicButton"
+>
+    ▶ تشغيل الأغنية
+</button>
+<div class="music-status" id="musicStatus">
+    جاهزة للتشغيل 🎧
+</div>
+<audio id="music" preload="metadata">
+    <source
+        src="Kadim Al Sahir - Tareekho Meeladi - (320 Kbps).mp3"
+        type="audio/mpeg"
+    >
+    متصفحك لا يدعم تشغيل الصوت.
+</audio>
+</div>
 </div>
 </section>
 <!-- =========================
      الشعر
 ========================= -->
-<section>
-<div class="title">
-    <span>
-        A LITTLE POEM
-    </span>
-    <h2>
-        ولأنك برنسس... إلك شعر 🌹
-    </h2>
+<section id="poem">
+<div class="container">
+<div class="tag">
+    03 — POETRY
 </div>
+<h2 class="title">
+    حكي صغير إلك
+</h2>
+<div class="poem-box">
 <div class="poem">
-    <div class="rose">
-        🌹
-    </div>
-    <p>
-        يا روضةَ القلبِ عذرًا إن زللتُ
-        <br>
-        فما أردتُ يومًا أن أرى الحزنَ في عينيكِ
-        <br><br>
-        وإن كان زعلُكِ نتفةً صغيرةً
-        <br>
-        فقلبي من زعلكِ ما عرفَ يهدأُ
-        <br><br>
-        أعتذرُ اليومَ، وأعتذرُ غدًا
-        <br>
-        حتى تعودَ تلكَ الابتسامةُ التي أحبها
-        <br><br>
-        فسامحيني يا برنسس،
-        <br>
-        فما أريدُ من الدنيا
-        <br>
-        إلا أن أراكِ بخيرٍ وتبتسمين ❤️
-    </p>
-    <div class="signature">
-        — محمد ❤️
-    </div>
+يا روضةُ، يا اسمًا إذا مرَّ بخاطري<br>
+أضاءَ من الذكرى طريقًا في المدى
+<br><br>
+ولكِ من الحروفِ قصيدةٌ لا تنتهي<br>
+كلما قلتُ انتهيتُ... أعودُ من ابتدا
+<br><br>
+إن كان للجمالِ مكانٌ في الكلام<br>
+فبعضُ الكلامِ حين يُقالُ... يُشبهكِ
+</div>
+<div class="poem-author">
+    — إلى أميرتي روضة ❤️
+</div>
+</div>
 </div>
 </section>
 <!-- =========================
-     أسباب
+     عداد الأيام
+========================= -->
+<section id="moments">
+<div class="container">
+<div class="tag">
+    04 — TIME
+</div>
+<h2 class="title">
+    وقديش صار؟ ⏳
+</h2>
+<p class="description">
+    من أول يوم حكينا لليوم...
+</p>
+<div class="counter-box">
+<div class="counter-item">
+<div class="counter-number" id="days">
+    0
+</div>
+<div class="counter-label">
+    يوم
+</div>
+</div>
+<div class="counter-item">
+<div class="counter-number" id="hours">
+    0
+</div>
+<div class="counter-label">
+    ساعة
+</div>
+</div>
+<div class="counter-item">
+<div class="counter-number" id="minutes">
+    0
+</div>
+<div class="counter-label">
+    دقيقة
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================
+     سؤال تفاعلي
 ========================= -->
 <section>
-<div class="title">
-    <span>
-        3 LITTLE THINGS
-    </span>
-    <h2>
-        ثلاث شغلات لازم تعرفيهم 👑
-    </h2>
+<div class="container">
+<div class="tag">
+    05 — JUST FOR FUN
 </div>
-<div class="cards">
-<div class="card">
-    <div class="card-icon">
-        ❤️
-    </div>
-    <h3>
-        زعلك بيفرق
-    </h3>
-    <p>
-        حتى لو نتفة،
-        ما بحب يكون سببها أنا.
-    </p>
+<h2 class="title">
+    سؤال صغير 😌
+</h2>
+<div class="question">
+<h3>
+    شو أحلى اشي فيكي؟
+</h3>
+<div class="options">
+<button class="option" onclick="answer('الضحكة ❤️')">
+    الضحكة
+</button>
+<button class="option" onclick="answer('العيون 🫶')">
+    العيون
+</button>
+<button class="option" onclick="answer('الشخصية ✨')">
+    الشخصية
+</button>
+<button class="option" onclick="answer('كلهم 😭')">
+    كلهم
+</button>
 </div>
-<div class="card">
-    <div class="card-icon">
-        👑
-    </div>
-    <h3>
-        إنتِ برنسس
-    </h3>
-    <p>
-        والبرنسس إلها معاملة
-        خاصة طبعًا 😂❤️
-    </p>
+<div class="answer" id="answer">
 </div>
-<div class="card">
-    <div class="card-icon">
-        🌷
-    </div>
-    <h3>
-        ابتسامتك أهم
-    </h3>
-    <p>
-        فخلينا نرجعها
-        بأسرع وقت ممكن 😂
-    </p>
 </div>
 </div>
 </section>
 <!-- =========================
-     المفاجأة
+     رسالة مخفية
 ========================= -->
-<section class="surprise">
-<div class="title">
-    <span>
-        SECRET MESSAGE
-    </span>
-    <h2>
-        عندي آخر محاولة 😭❤️
-    </h2>
-    <p>
-        اضغطي الزر...
-    </p>
+<section>
+<div class="container">
+<div class="tag">
+    06 — SECRET
 </div>
-<button
-    class="surprise-btn"
-    onclick="surprise()">
-    شو مخبي؟ 👀
+<h2 class="title">
+    في شيء مخبّى هون 👀
+</h2>
+<p class="description">
+    إذا وصلتي لهون... اضغطي.
+</p>
+<button class="secret-btn" onclick="showSecret()">
+    افتحي ✦
 </button>
+<div class="secret" id="secret">
+يا عيوني،
+<br><br>
+ما بدي أحكي كلام كثير...
+<br>
+بس بكفي وجودك بحياتي.
+<br><br>
+والله ما عمري حلاقي زيك،
+يا برنسس حياتي كلها،
+يا نور حياتي إنتِ.
+<br><br>
+وإنتِ أحلى اشي بحياتي. ❤️
+</div>
+</div>
+</section>
+<!-- =========================
+     القلب
+========================= -->
+<section class="love-section">
+<div class="love-container">
 <div
-    class="surprise-text"
-    id="surpriseText">
+    class="love-heart"
+    onclick="showLove()"
+    title="اضغطي ❤️"
+>
+    ❤️
+</div>
+<div class="love-message" id="loveMessage">
+    I LOVE YOU ❤️
+</div>
 </div>
 </section>
 <!-- =========================
      النهاية
 ========================= -->
 <section class="final">
-<div>
-    <div class="final-heart">
-        ❤️
-    </div>
-    <h2>
-        روضة... تصالحنا؟ 🥹
-    </h2>
-    <p>
-        ما بدي اعتذار طويل،
-        ولا بدي منك تنسي كل شيء فورًا.
-        <br>
-        بس بدي أشوف البرنسس مبسوطة ❤️
-    </p>
-    <button
-        class="final-btn"
-        onclick="forgive()">
-        خلص سامحتك ❤️
-    </button>
-    <div
-        class="final-result"
-        id="finalResult">
-    </div>
+<div class="container">
+<h2>
+    Rawda ✦
+</h2>
+<p>
+    إلى أميرتي، من شخص يحب البرنسس.
+</p>
 </div>
 </section>
-<footer>
-    صنع خصيصًا لـ
-    <strong>
-        روضة 👑
-    </strong>
-    <br>
-    من محمد ❤️
-    <br><br>
-    "الزعل نتفة... بس الاعتذار VIP." 😂
-</footer>
 <script>
 /* =========================
-   فتح الرسالة
+   تشغيل الأغنية
 ========================= */
-function openMessage(){
-    document
-    .getElementById("apologySection")
-    .scrollIntoView({
-        behavior:"smooth"
-    });
+function playMusic(){
+    const music =
+        document.getElementById("music");
+    const button =
+        document.getElementById("musicButton");
+    const status =
+        document.getElementById("musicStatus");
+    if(music.paused){
+        music.play()
+        .then(() => {
+            button.innerHTML =
+                "⏸ إيقاف الأغنية";
+            status.innerText =
+                "الأغنية تعمل الآن 🎵";
+        })
+        .catch(() => {
+            status.innerText =
+                "تأكد أن ملف الأغنية موجود بجانب index.html";
+        });
+    }else{
+        music.pause();
+        button.innerHTML =
+            "▶ تشغيل الأغنية";
+        status.innerText =
+            "تم إيقاف الأغنية";
+    }
 }
+/* عند انتهاء الأغنية */
+document
+.getElementById("music")
+.addEventListener("ended", function(){
+    document.getElementById("musicButton").innerHTML =
+        "▶ تشغيل الأغنية";
+    document.getElementById("musicStatus").innerText =
+        "انتهت الأغنية 🎵";
+});
 /* =========================
-   القلوب
+   عداد الأيام
 ========================= */
-function createHeart(){
-    const heart =
-    document.createElement("div");
-    heart.className =
-    "floating-heart";
-    const list = [
-        "❤️",
-        "💗",
-        "💖",
-        "💕",
-        "🌹",
-        "✨",
-        "👑"
-    ];
-    heart.innerHTML =
-    list[
+const firstDate =
+    new Date("2025-12-31T00:00:00");
+function updateCounter(){
+    const now =
+        new Date();
+    const difference =
+        now - firstDate;
+    const totalMinutes =
+        Math.floor(difference / 60000);
+    const days =
+        Math.floor(totalMinutes / 1440);
+    const hours =
         Math.floor(
-            Math.random()*list.length
-        )
-    ];
-    heart.style.left =
-    Math.random()*100+"vw";
-    heart.style.fontSize =
-    (12+Math.random()*22)+"px";
-    heart.style.animationDuration =
-    (5+Math.random()*5)+"s";
-    document.body.appendChild(heart);
-    setTimeout(
-        ()=>heart.remove(),
-        10000
-    );
-}
-setInterval(createHeart,700);
-/* =========================
-   مقياس الزعل
-========================= */
-let anger = 12;
-function lowerAnger(){
-    anger -= 2;
-    if(anger < 0){
-        anger = 0;
-    }
-    document
-    .getElementById("percent")
-    .innerText =
-    anger+"%";
-    document
-    .getElementById("meterFill")
-    .style.width =
-    anger+"%";
-    const text =
-    document.getElementById("angerText");
-    if(anger > 8){
-        text.innerText =
-        "لسا في نتفة زعل 😂❤️";
-    }
-    else if(anger > 0){
-        text.innerText =
-        "قربنا نوصل للصفر 👀❤️";
-    }
-    else{
-        text.innerText =
-        "تم القضاء على الزعل رسميًا 🎉❤️";
-    }
-}
-/* =========================
-   المفاجأة
-========================= */
-function surprise(){
-    document
-    .getElementById("surpriseText")
-    .innerHTML =
-    "إذا وصلتي لهون... " +
-    "فهذا يعني إنك أعطيتي الاعتذار فرصة 😂❤️" +
-    "<br><br>" +
-    "والآن يا برنسس 👑..." +
-    "<br>" +
-    "ابتسامة صغيرة، وبنعتبر القضية انتهت 🤝❤️";
-}
-/* =========================
-   النهاية
-========================= */
-function forgive(){
-    document
-    .getElementById("finalResult")
-    .innerHTML =
-    "😭❤️ الحمدلله! " +
-    "رجعت البرنسس راضية." +
-    "<br><br>" +
-    "تم إغلاق ملف الزعل بنجاح 👑✨";
-    for(let i=0;i<25;i++){
-        setTimeout(
-            createHeart,
-            i*80
+            (totalMinutes % 1440) / 60
         );
+    const minutes =
+        totalMinutes % 60;
+    document.getElementById("days").innerText =
+        days;
+    document.getElementById("hours").innerText =
+        hours;
+    document.getElementById("minutes").innerText =
+        minutes;
+}
+updateCounter();
+setInterval(updateCounter,60000);
+/* =========================
+   السؤال التفاعلي
+========================= */
+function answer(text){
+    const box =
+        document.getElementById("answer");
+    box.innerText =
+        "اختيار حلو... " + text;
+    box.style.display =
+        "block";
+}
+/* =========================
+   الرسالة المخفية
+========================= */
+function showSecret(){
+    const secret =
+        document.getElementById("secret");
+    if(secret.style.display === "block"){
+        secret.style.display =
+            "none";
+    }else{
+        secret.style.display =
+            "block";
     }
+}
+/* =========================
+   القلب ❤️
+========================= */
+function showLove(){
+    const message =
+        document.getElementById("loveMessage");
+    message.classList.toggle("show");
 }
 </script>
 </body>
